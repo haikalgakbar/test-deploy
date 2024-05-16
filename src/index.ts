@@ -1,3 +1,4 @@
+import "dotenv/config";
 import express from "express";
 import mongoose from "mongoose";
 import { Note } from "./models/note";
@@ -10,7 +11,7 @@ mongoose
 
 app.use(express.json());
 
-app.get("/", async (req, res) => {
+app.get("/", async (_, res) => {
   const allNotes = await Note.find();
   res.json(allNotes);
 });
