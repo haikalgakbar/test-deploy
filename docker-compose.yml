@@ -4,21 +4,21 @@ services:
     build: .
     ports:
       - "8000:8000"
-    depends_on:
-      - mongodb
-  mongodb:
-    image: mongo
-    ports:
-      - "27017:27017"
-    volumes:
-      - type: volume
-        source: mongodb-volume
-        target: /data/db
-      - type: volume
-        source: mongodb-config
-        target: /data/configdb
-volumes:
-  mongodb-volume:
-    name: mongodb-volume
-  mongodb-config:
-    name: mongodb-config
+  #   depends_on:
+  #     - mongodb
+  # mongodb:
+  #   image: mongo
+  #   ports:
+  #     - "27017:27017"
+    # volumes:
+    #   - type: volume
+    #     source: mongodb-volume
+    #     target: /data/db
+    #   - type: volume
+    #     source: mongodb-config
+    #     target: /data/configdb
+# volumes:
+#   mongodb-volume:
+#     name: mongodb-volume
+#   mongodb-config:
+#     name: mongodb-config
